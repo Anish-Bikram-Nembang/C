@@ -17,7 +17,7 @@ int main(void){
                 break;
             case '\n':
                 newline_count++;
-            decault:
+            default:
                 break;
         };
     printf("blanks: %d\ntabs: %d\nnewlines: %d \n", blank_count, tab_count, newline_count);

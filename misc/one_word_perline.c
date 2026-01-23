@@ -21,10 +21,10 @@ int main(void){
         if ((str[i] == ' ' || str[i] == '\t') && state == IN) {
             state = OUT;
             printf("\n");
-        } else if (!state && (str[i] != ' ' && str[i] != '\t')) {
+        } else if (state == OUT && (str[i] != ' ' && str[i] != '\t')) {
             state = IN;
         }
-        if (state) {
+        if (state == IN) {
             printf("%c", str[i]);
         }
         i++;

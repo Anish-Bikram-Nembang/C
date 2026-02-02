@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int find_highest(int *nums, int size);
 int main(void) {
     int c, frequency[26] = {0};
@@ -10,10 +11,17 @@ int main(void) {
         }
     }
     printf("\n");
-    int printed;
+    int printed, length;
     int max = find_highest(frequency, 26);
+    char max_str[20], str[20];
+    snprintf(max_str, sizeof(max_str), "%d", max);
+    int max_length = strlen(max_str);
     for (int i = max; i >=0; i--) {
-        printf("%2d |", i);
+        snprintf(str, sizeof(str), "%d", i);
+        length = strlen(str);
+        for(int digit_count = 0; digit_count < (max_length - length); digit_count++)
+            printf(" ");
+        printf("%d |", i);
         printed = 0;
         for (int j = 0; j < 26; j++) {
             if (frequency[j] >= i && i != 0) {

@@ -1,5 +1,12 @@
-* 
-!*.c
-!*.h
-!*.md
+# Object files
+*.o
+
+# Default executable
+a.out
+
+# Any executable in subdirs (no extension)
+**/[A-Za-z]*     # matches typical binary names
+
+# Dependency files
+*.d
 
